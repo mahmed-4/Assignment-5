@@ -68,9 +68,6 @@ for (const btn of copyBtns) {
         alert(`Failed to copy: `, err);
       });
 
-  
-    // alert(`number is copied ${callNumber}`);
-
     displayCopyCount++;
     document.getElementById("copy-count").innerText = displayCopyCount;
   });
