@@ -66,3 +66,10 @@ for(const btn of copyBtns){
     document.getElementById('copy-count').innerText = displayCopyCount;
   })
 }
+
+function showTime() {
+  const now = new Date();
+  document.getElementById("clock").innerText = now.toLocaleTimeString();
+}
+setInterval(showTime, 1000);
+showTime() ;
