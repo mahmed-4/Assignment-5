@@ -59,14 +59,24 @@ for(const btn of copyBtns){
     const copyCount = Number(document.getElementById('copy-count').innerText);
     
     const parentCard = this.closest(".card");
-    const callNumber = parentCard.querySelector(".phone-number").innerText;
-    
+    const callNumber = parentCard.querySelector(".phone-number").innerText;   
+// ok 
+navigator.clipboard.writeText(callNumber).then(() => {
+  alert(`Number ${callNumber} copied to clipboard`);
+})
+.catch(err => {
+  alert(`Failed to copy: `, err);
+})
+
+// -----
     alert(`number is copied ${callNumber}`);
+
     displayCopyCount++
     document.getElementById('copy-count').innerText = displayCopyCount;
   })
 }
 
+// ---- call time -----
 function showTime() {
   const now = new Date();
   document.getElementById("clock").innerText = now.toLocaleTimeString();
